@@ -14,11 +14,11 @@ namespace Generics
             char[] character = { 'A', 'B', 'C', 'D', 'E' };
 
             Generics getMethod = new Generics();
-            getMethod.Print(integer);
+            getMethod.Print<int>(integer);
             Console.WriteLine();
-            getMethod.Print(doubles);
+            getMethod.Print<double>(doubles);
             Console.WriteLine();
-            getMethod.Print(character);
+            getMethod.Print<char>(character);
         }
     }
 }

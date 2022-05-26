@@ -8,25 +8,11 @@ namespace Generics
 {
     internal class Generics
     {
-        public void Print(int[] details)
+        public void Print<T>(T[] details)
         {
             foreach(var data in details)
             {
                 Console.Write(data+" ");
-            }
-        }
-        public void Print(double[] details)
-        {
-            foreach (var data in details)
-            {
-                Console.Write(data + " ");
-            }
-        }
-        public void Print(char[] details)
-        {
-            foreach (var data in details)
-            {
-                Console.Write(data + " ");
             }
         }
     }
