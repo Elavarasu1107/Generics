@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Generics
 {
-    internal class Program
+    public class Program
     {
+        
         public static void Main(string[] args)
         {
             var log = NLog.LogManager.GetCurrentClassLogger();
@@ -13,12 +15,12 @@ namespace Generics
             double[] doubles = { 1.1, 1.2, 1.3, 1.4, 1.5 };
             char[] character = { 'A', 'B', 'C', 'D', 'E' };
 
-            Generics getMethod = new Generics();
-            getMethod.Print<int>(integer);
-            Console.WriteLine();
-            getMethod.Print<double>(doubles);
-            Console.WriteLine();
-            getMethod.Print<char>(character);
+            Variable<int> intMethod = new Variable<int>(integer);
+            intMethod.Print();
+            Variable<double> doubleMethod = new Variable<double>(doubles);
+            doubleMethod.Print();
+            Variable<char> charMethod = new Variable<char>(character);
+            charMethod.Print();
         }
     }
 }

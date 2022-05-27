@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    internal class Generics
+    public class Variable<T>
     {
-        public void Print<T>(T[] details)
+        private T[] inputArray;
+        public Variable(T[] inputArray)
         {
-            foreach(var data in details)
+            this.inputArray = inputArray;
+        }
+        public void Print()
+        {
+            foreach (var data in inputArray)
             {
-                Console.Write(data+" ");
+                Console.Write(data + " ");
             }
+            Console.WriteLine();
         }
     }
 }
