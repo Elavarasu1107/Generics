@@ -9,7 +9,7 @@ namespace MaxValuePosition
         {
             int firstValue = 100, secondValue = 75, thirdValue = 50;
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.IntCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<int>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(firstValue, output);
         }
         [Test]
@@ -17,7 +17,7 @@ namespace MaxValuePosition
         {
             int firstValue = 100, secondValue = 175, thirdValue = 50;
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.IntCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<int>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(secondValue, output);
         }
         [Test]
@@ -25,7 +25,7 @@ namespace MaxValuePosition
         {
             int firstValue = 100, secondValue = 175, thirdValue = 1150;
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.IntCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<int>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(thirdValue, output);
         }
     }
@@ -36,7 +36,7 @@ namespace MaxValuePosition
         {
             float firstValue = 100.2564F, secondValue = 75.6587F, thirdValue = 50.6214F;
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.FloatCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<float>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(firstValue, output);
         }
         [Test]
@@ -44,7 +44,7 @@ namespace MaxValuePosition
         {
             float firstValue = 50.5455F, secondValue = 100.4546F, thirdValue = 75.5154F;
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.FloatCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<float>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(secondValue, output);
         }
         [Test]
@@ -52,7 +52,7 @@ namespace MaxValuePosition
         {
             float firstValue = 100.5456F, secondValue = 175.5456F, thirdValue = 1150.4165F;
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.FloatCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<float>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(thirdValue, output);
         }
     }
@@ -63,7 +63,7 @@ namespace MaxValuePosition
         {
             string firstValue = "Peach", secondValue = "Apple", thirdValue = "Banana";
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.StringCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<string>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(firstValue, output);
         }
         [Test]
@@ -71,7 +71,7 @@ namespace MaxValuePosition
         {
             string firstValue = "Apple", secondValue = "Peach", thirdValue = "Banana";
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.StringCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<string>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(secondValue, output);
         }
         [Test]
@@ -79,7 +79,7 @@ namespace MaxValuePosition
         {
             string firstValue = "Banana", secondValue = "Apple", thirdValue = "Peach";
             MaxFinder getmethod = new MaxFinder();
-            var output = getmethod.StringCheck(firstValue, secondValue, thirdValue);
+            var output = getmethod.ValueCheck<string>(firstValue, secondValue, thirdValue);
             Assert.AreEqual(thirdValue, output);
         }
     }
