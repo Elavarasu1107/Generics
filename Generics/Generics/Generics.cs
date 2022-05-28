@@ -8,7 +8,7 @@ namespace Generics
 {
     public class MaxFinder
     {
-        public T ValueCheck<T>(T firstValue, T secondValue, T thirdValue) where T : IComparable
+        public int ValueCheck(int firstValue, int secondValue, int thirdValue)
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
             {

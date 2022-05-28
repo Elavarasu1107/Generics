@@ -11,7 +11,7 @@ namespace Generics
             log.Info("Running Generics Program");
 
             MaxFinder getMethod = new MaxFinder();
-            var forInt = getMethod.ValueCheck<int>(100, 75, 50);
+            var forInt = getMethod.ValueCheck(100, 75, 50);
             Console.WriteLine("The Maximum Value is: "+forInt);
         }
     }
