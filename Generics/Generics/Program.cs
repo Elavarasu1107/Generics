@@ -10,13 +10,12 @@ namespace Generics
             var log = NLog.LogManager.GetCurrentClassLogger();
             log.Info("Running Generics Program");
 
-            MaxFinder getMethod = new MaxFinder();
-            var forInt = getMethod.ValueCheck<int>(100, 75, 50);
-            var forFloat = getMethod.ValueCheck<float>(75.2584F, 150.2205F, 50.6584F);
-            var forString = getMethod.ValueCheck<string>("Apple", "Peach", "Banana");
-            Console.WriteLine("The Maximum Integer Value is: " + forInt);
-            Console.WriteLine("The Maximum Float Value is: " + forFloat);
-            Console.WriteLine("The Maximum String Value is: " + forString);
+            MaxFinder<int> intMethod = new MaxFinder<int>(100, 175, 50);
+            Console.WriteLine("The Maximum Integer Value is: " + intMethod.ValueCheck());
+            MaxFinder<float> floatMethod = new MaxFinder<float>(100.5464F, 75.5644F, 50.5478F);
+            Console.WriteLine("The Maximum Float Value is: " + floatMethod.ValueCheck());
+            MaxFinder<string> stringMethod = new MaxFinder<string>("Apple", "Banana", "Peach");
+            Console.WriteLine("The Maximum String Value is: " + stringMethod.ValueCheck());
         }
     }
 }
