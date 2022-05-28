@@ -56,4 +56,31 @@ namespace MaxValuePosition
             Assert.AreEqual(thirdValue, output);
         }
     }
+    public class StringTests
+    {
+        [Test]
+        public void GetValue_CheckFirstString_PrintResult()
+        {
+            string firstValue = "Peach", secondValue = "Apple", thirdValue = "Banana";
+            MaxFinder getmethod = new MaxFinder();
+            var output = getmethod.StringCheck(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(firstValue, output);
+        }
+        [Test]
+        public void GetValue_ChecksecondString_PrintResult()
+        {
+            string firstValue = "Apple", secondValue = "Peach", thirdValue = "Banana";
+            MaxFinder getmethod = new MaxFinder();
+            var output = getmethod.StringCheck(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(secondValue, output);
+        }
+        [Test]
+        public void GetValue_CheckThirdString_PrintResult()
+        {
+            string firstValue = "Banana", secondValue = "Apple", thirdValue = "Peach";
+            MaxFinder getmethod = new MaxFinder();
+            var output = getmethod.StringCheck(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(thirdValue, output);
+        }
+    }
 }
