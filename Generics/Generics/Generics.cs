@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    public class Variable<T>
+    public class MaxFinder
     {
-        private T[] inputArray;
-        public Variable(T[] inputArray)
+        public T ValueCheck<T>(T firstValue, T secondValue, T thirdValue) where T : IComparable
         {
-            this.inputArray = inputArray;
-        }
-        public void Print()
-        {
-            foreach (var data in inputArray)
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
             {
-                Console.Write(data + " ");
+                return firstValue;
             }
-            Console.WriteLine();
+            else if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
+            {
+                return secondValue;
+            }
+            else
+            {
+                return thirdValue;
+            }
         }
     }
 }
+
