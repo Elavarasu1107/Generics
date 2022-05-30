@@ -9,7 +9,6 @@ namespace Generics
     public class MaxFinder<T> where T : IComparable
     {
         private T[] parameters;
-
         public MaxFinder(params T[] parameters)
         {
             this.parameters = parameters;
@@ -17,7 +16,11 @@ namespace Generics
         public T ValueCheck()
         {
             Array.Sort(parameters);
-            return parameters[parameters.Length-1];
+            return parameters[parameters.Length - 1];
+        }
+        public void Display()
+        {
+            Console.WriteLine("The Maximum Value is: " + ValueCheck());
         }
     }
 }
