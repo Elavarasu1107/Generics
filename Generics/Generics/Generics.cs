@@ -8,32 +8,16 @@ namespace Generics
 {
     public class MaxFinder<T> where T : IComparable
     {
-        private T firstValue, secondValue, thirdValue;
+        private T[] parameters;
 
-        public MaxFinder(T firstValue, T secondValue, T thirdValue)
+        public MaxFinder(params T[] parameters)
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
+            this.parameters = parameters;
         }
         public T ValueCheck()
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0
-                || firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0
-                || firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
-            {
-                return firstValue;
-            }
-            else if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0
-                || secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0
-                || secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
-            {
-                return secondValue;
-            }
-            else
-            {
-                return thirdValue;
-            }
+            Array.Sort(parameters);
+            return parameters[parameters.Length-1];
         }
     }
 }
